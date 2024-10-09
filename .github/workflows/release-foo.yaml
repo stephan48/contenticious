@@ -15,6 +15,10 @@ jobs:
     name: Release pushed tag
     runs-on: ubuntu-22.04
     steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0    
       - run: |
          sudo apt update && sudo apt install build-essential libfile-sharedir-perl
          perl Makefile.PL
