@@ -20,7 +20,7 @@ jobs:
         with:
           fetch-depth: 0    
       - run: |
-         sudo apt update && sudo apt install build-essential libfile-sharedir-perl
+         sudo apt update && sudo apt install build-essential libfile-sharedir-install-perl perl perl-modules
          perl Makefile.PL
          make manifest dist
       - name: release
