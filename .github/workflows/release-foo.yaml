@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - "dummy-v*"
+    branches:
+      - "mojo-plugin"
 
 permissions:
   contents: write
@@ -14,7 +16,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - run: |
-         apt update && apt install build-essential libfile-sharedir-perl
+         sudo apt update && sudo apt install build-essential libfile-sharedir-perl
          perl Makefile.PL
          make manifest dist
       - name: release
