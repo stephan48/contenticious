@@ -32,6 +32,8 @@ jobs:
           release_name: ${{ github.ref }}
           tag_name: ${{ github.ref }}
           body_path: Changes
+        env:
+          GITHUB_TOKEN: ${{ github.token }}          
       - name: upload linux artifact
         uses: actions/upload-release-asset@v1
         with:
@@ -39,3 +41,5 @@ jobs:
           asset_path: ./Contenticious-0.393.tar.gz
           asset_name: Contenticious-0.393.tar.gz
           asset_content_type: application/gzip
+        env:
+          GITHUB_TOKEN: ${{ github.token }}          
